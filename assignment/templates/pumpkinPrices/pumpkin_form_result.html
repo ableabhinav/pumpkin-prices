@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results of searched query</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		{% if not Pumpkins %}
+			<h1>No Entries to display</h1>
+		{% else %}
+		<table class="table table-dark">
+  			<thead>
+		    <tr>
+		      <th scope="col">City</th>
+		      <th scope="col">Variety</th>
+		      <th scope="col">Date</th>
+		      <th scope="col">Low Price</th>
+		      <th scope="col">High Price</th>
+		    </tr>
+		  	</thead>
+		  <tbody>
+		  	{% for item in Pumpkins %}
+		    <tr>
+		      <th scope="row">{{ item.city }}</th>
+		      <td>{{ item.variety }}</td>
+		      <td>{{ item.date }}</td>
+		      <td>{{ item.low_price }}</td>
+		      <td>{{ item.high_price }}</td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+		{% endif %}
+	</div>
+</body>
+</html>
